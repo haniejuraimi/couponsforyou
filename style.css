@@ -15,19 +15,21 @@ nav {
 
 #carouselExampleIndicators {
   height:100vh;
-  padding-top: 4em;
+  padding-top: 7em;
   padding-left: 10em;
   padding-right: 10em;
   padding-bottom: 3em;
 }
 
+.carousel-indicators {
+padding-bottom: 6em;
+}
+
 .carousel-control-prev {
   padding-left: 10em;
-  padding-right: 10em;
 }
 
 .carousel-control-next {
-  padding-left: 10em;
   padding-right: 10em;
 }
 
