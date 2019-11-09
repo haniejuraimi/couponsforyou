@@ -375,6 +375,22 @@ var app = new Vue({
             }
 
             return getUnique(this.coupons);
+        },
+
+        couponsWithUniquePrices: function() {
+            function getUnique(coupons){
+                var uniqueArrayOfPrices = [];
+                
+                // Loop through array values
+                for(const coupon of coupons){
+                    if(!uniqueArrayOfPrices.includes(coupon.price)){
+                        uniqueArrayOfPrices.push(coupon.price);
+                    }
+                }
+                return uniqueArrayOfPrices;
+            }
+
+            return getUnique(this.coupons);
         }
     }
     
