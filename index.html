@@ -32,13 +32,15 @@
                     </div>
                 </nav>
             </header>
-            <div class="content">
-                    <div class="jumbotron">
-                            <h1 class="display-4">Hello, Singapore!</h1>
-                            <p class="lead">We are a group of 3 students from Madrasah Aljunied and this is the website we are able to create after a year of learning how to code!</p>
-                            <hr class="my-4">
-                            <p>You can find the latest deals and promotions from food outlets in Singapore! You can also find meals and deals within your budget, all in one website!</p>
-                          </div>
+            <div id="home" class="content">
+                <div class="jumbotron">
+                    <h1 class="display-4">Hello, Singapore!</h1>
+                    <p class="lead">We are a group of 3 students from Madrasah Aljunied and this is the website we are
+                        able to create after a year of learning how to code!</p>
+                    <hr class="my-4">
+                    <p>You can find the latest deals and promotions from food outlets in Singapore! You can also find
+                        meals and deals within your budget, all in one website!</p>
+                </div>
 
             </div>
         </div>
@@ -58,7 +60,7 @@
             </div>
             <strong>Currently selected company name: {{selectedCompanyName}}</strong>
             <hr />
-    
+
             <div class="btn-group">
                 <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Prices <i class="fas fa-angle-down"></i>
@@ -71,17 +73,17 @@
                 </div>
             </div>
             <strong>Currently selected price: {{selectedPrice}}</strong>
-    
+
             <!-- <ul>
                 <li v-for="coupon in filteredPrice">{{ coupon.price }}</li>
             </ul> -->
-    
+
             <hr />
-    
+
             <div class="card-columns">
                 <div class="card" v-for="coupon in filteredCoupons">
-                    <img :src="'images/' + coupon.gambar"/>
-            
+                    <img :src="'images/' + coupon.gambar" />
+
                     <div class="card-body">
                         <h5 class="card-title">{{coupon.couponName}}</h5>
                         <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
@@ -93,50 +95,27 @@
             </div>
         </div>
 
-        <div  id="submitcoupon" class="container">
-                <div class="row justify-content-center">
-                  <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-                    <div class="row">
-                      <div class="col text-center">
-                        <h1>Register</h1>
-                        <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. </p>
-                      </div>
-                    </div>
-                    <div class="row align-items-center">
-                      <div class="col mt-4">
-                        <input type="text" class="form-control" placeholder="Company Name">
-                      </div>
-                    </div>
-                    <div class="row align-items-center mt-4">
-                      <div class="col">
-                        <input type="email" class="form-control" placeholder="Email">
-                      </div>
-                    </div>
-                    <div class="row align-items-center mt-4">
-                      <div class="col">
-                        <input type="password" class="form-control" placeholder="Password">
-                      </div>
-                      <div class="col">
-                        <input type="password" class="form-control" placeholder="Confirm Password">
-                      </div>
-                    </div>
-                    <div class="row justify-content-start mt-4">
-                      <div class="col">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                              I Read and Accept <a href="https://www.froala.com">Terms and Conditions</a>
-                            </label>
-                        </div>
-            
-                        <button class="btn btn-primary mt-4">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <br>
 
-              
+        <div id="submitcoupon" class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>Send Us A Coupon</h1>
+                            <p class="lead"> Send us an email with a coupon </p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-4">
+                        <div class="col">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4">Submit</button>
+                </div>
+            </div>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
