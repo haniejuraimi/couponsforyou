@@ -46,12 +46,8 @@ header{
 
 p {
   text-align: center;
-  color: white;
 }
 
-h1 {
-  color: white;
-}
 
 .content {
   width: 90%;
@@ -201,4 +197,8 @@ nav ul li a {
 .display-4 {
   text-align: center;
   margin-top: -0.6em;
+}
+
+.row {
+  color: white;
 }
