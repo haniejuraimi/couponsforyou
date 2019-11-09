@@ -30,7 +30,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: "IMG_1275.jpg"
+                gambar: "IMG_1276.jpg"
             },
             {
                 companyName: 'KFC',
@@ -40,7 +40,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: "IMG_1275.jpg"
+                gambar: "IMG_1277.jpg"
             },
             {
                 companyName: 'KFC',
@@ -50,7 +50,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: "kfc_5.JPG"
+                gambar: "IMG_1278.jpg"
             },
             {
                 companyName: 'KFC',
@@ -60,7 +60,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: "kfc_5.JPG"
+                gambar: "IMG_1279.jpg"
             },
             {
                 companyName: 'KFC',
@@ -70,7 +70,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1282.jpg"
             },
             {
                 companyName: 'KFC',
@@ -80,7 +80,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1283.jpg"
             },
             {
                 companyName: 'KFC',
@@ -90,7 +90,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1284.jpg"
             },
             {
                 companyName: 'KFC',
@@ -100,7 +100,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1285.jpg"
             },
             {
                 companyName: 'KFC',
@@ -110,7 +110,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1286.jpg"
             },
             {
                 companyName: 'KFC',
@@ -120,7 +120,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1287.jpg"
             },
             {
                 companyName: 'KFC',
@@ -130,7 +130,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1288.jpg"
             },
             {
                 companyName: 'KFC',
@@ -140,7 +140,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1289.jpg"
             },
             {
                 companyName: 'KFC',
@@ -150,7 +150,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1290.jpg"
             },
             {
                 companyName: 'KFC',
@@ -160,7 +160,7 @@ var app = new Vue({
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
                 invalidThings: 'KFC Delivery and KFC Corporate Events',
-                gambar: ""
+                gambar: "IMG_1291.jpg"
             },
         ],
         selectedCompanyName: null,
