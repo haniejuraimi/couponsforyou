@@ -15,7 +15,7 @@ var app = new Vue({
             {
                 companyName: 'KFC',
                 code: '2TENDERS',
-                price: '$1,95',
+                price: '$1.95',
                 couponName: '2pc Hot & Crispy Tenders',
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
