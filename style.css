@@ -35,7 +35,9 @@ padding-bottom: 6em;
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #CD5C5C;  /* fallback for old browsers */
+  background: #D98880;
+  
+  /* #CD5C5C;  fallback for old browsers */
 }
 
 header{ 
