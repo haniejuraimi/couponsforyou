@@ -13,6 +13,24 @@ nav {
   width: 100%; /* Full width */
 }
 
+#carouselExampleIndicators {
+  height:100vh;
+  padding-top: 4em;
+  padding-left: 10em;
+  padding-right: 10em;
+  padding-bottom: 3em;
+}
+
+.carousel-control-prev {
+  padding-left: 10em;
+  padding-right: 10em;
+}
+
+.carousel-control-next {
+  padding-left: 10em;
+  padding-right: 10em;
+}
+
 body {
   font-family: 'Quicksand', sans-serif;
   background: #CD5C5C;  /* fallback for old browsers */
@@ -21,7 +39,6 @@ body {
 header{ 
   width: 100%;
   height: 100vh;
-  background: url(person-holding-iphone-6-744780.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 
