@@ -361,6 +361,22 @@ var app = new Vue({
 
             return couponsFilteredByPriceAndCompanyName;
         },
+        couponsWithUniqueCompanyNames: function() {
+            function getUnique(coupons){
+                var uniqueArrayOfCompanies = [];
+                
+                // Loop through array values
+                for(const coupon of coupons){
+                    if(!uniqueArrayOfCompanies.includes(coupon.companyName)){
+                        uniqueArrayOfCompanies.push(coupon.companyName);
+                    }
+                }
+                return uniqueArrayOfCompanies;
+            }
+
+            return getUnique(this.coupons);
+        }
     }
+    
 
 })
