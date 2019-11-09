@@ -35,7 +35,7 @@ header{
 }
 
 .button {
-  background-color: #1768fff5;
+  background-color: #255ca3f5;
   border: 1cm;
   color: white;
   padding: 15px 32px;
@@ -48,7 +48,7 @@ header{
 }
 
 .button-clear {
-  background-color: rgba(251, 53, 53, 0.87);
+  background-color: rgba(134, 28, 28, 0.87);
   border: 1cm;
   color: white;
   padding: 15px 32px;

@@ -67,8 +67,8 @@
                 </button>
                 <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" v-for="coupon in coupons" v-on:click="priceFilterSelected(coupon.price)">
-                        {{ coupon.price }}
+                    <a class="dropdown-item" v-for="price in couponsWithUniquePrices" v-on:click="priceFilterSelected(price)">
+                        {{ price }}
                     </a>
                 </div>
             </div>
