@@ -152,3 +152,12 @@ nav ul li a {
 .card img {
   width: 100%;
 }
+
+.jumbotron {
+  height: 15em;
+}
+
+.display-4 {
+  text-align: center;
+  margin-top: -0.6em;
+}
