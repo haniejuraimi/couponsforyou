@@ -8,8 +8,8 @@ var app = new Vue({
                 price: '$4.95',
                 couponName: '2pc Chicken Meal',
                 dueDate: '19 Nov 2019',
-                unvalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
-                unvalidThings: 'KFC Delivery and KFC Corporate Events',
+                invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
+                invalidThings: 'KFC Delivery and KFC Corporate Events',
                 gambar: "kfc_5.JPG"
             },
             {
