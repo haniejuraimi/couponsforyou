@@ -292,6 +292,46 @@ var app = new Vue({
                 invalidThings: 'BK Delivery and Catering  ',
                 gambar: "IMG_1310.jpg"
             },
+            {
+                companyName: 'BURGER KING',
+                code: '-',
+                price: '$6.40',
+                couponName: '1-for-1 Whopper (ALA CARTE)',
+                dueDate: '-',
+                invalidPlaces: 'BK Kallang Leisure Park (on event days) and Airport Stores',
+                invalidThings: 'BK Delivery and Catering  ',
+                gambar: "whop.jpg"
+            },
+            {
+                companyName: 'BURGER KING',
+                code: '-',
+                price: '$4.00',
+                couponName: '2 for $4 (Cheeseburger / BBQ Chick N Crisp',
+                dueDate: '-',
+                invalidPlaces: 'BK Kallang Leisure Park (on event days) and Airport Stores',
+                invalidThings: 'during weekends, bulk orders, BK Delivery and Catering  ',
+                gambar: "2 for 4.jpg"
+            },
+            {
+                companyName: 'BURGER KING',
+                code: '-',
+                price: '$5.00',
+                couponName: 'Flamin Hot Deals',
+                dueDate: '-',
+                invalidPlaces: '-',
+                invalidThings: 'BK Delivery and Catering and bulk orders',
+                gambar: "$5.jpg"
+            },
+            {
+                companyName: 'BURGER KING',
+                code: '-',
+                price: '$2+',
+                couponName: 'Rise & Smile',
+                dueDate: '-',
+                invalidPlaces: 'BK Kallang Leisure Park (on event days) and Airport Stores',
+                invalidThings: 'during weekends, BK Delivery and Catering  ',
+                gambar: "rise.jpg"
+            },
         ],
         selectedCompanyName: null,
         selectedPrice: null,
