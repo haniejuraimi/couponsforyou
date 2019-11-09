@@ -59,50 +59,52 @@
         </nav> -->
 
 
-        <div class="btn-group">
-            <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Food Outlets <i class="fas fa-angle-down"></i>
-            </button>
-            <button class="button-clear" v-on:click="clearFoodOutletsFilter">Clear filter</button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" v-for="coupon in coupons"
-                    v-on:click="companyNameFilterSelected(coupon.companyName)">
-                    {{ coupon.companyName }}
-                </a>
+        <div class="content">
+            <div class="btn-group">
+                <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Food Outlets <i class="fas fa-angle-down"></i>
+                </button>
+                <button class="button-clear" v-on:click="clearFoodOutletsFilter">Clear filter</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" v-for="coupon in coupons"
+                        v-on:click="companyNameFilterSelected(coupon.companyName)">
+                        {{ coupon.companyName }}
+                    </a>
+                </div>
             </div>
-        </div>
-        <strong>Currently selected company name: {{selectedCompanyName}}</strong>
-        <hr />
-
-        <div class="btn-group">
-            <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Prices <i class="fas fa-angle-down"></i>
-            </button>
-            <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" v-for="coupon in coupons" v-on:click="priceFilterSelected(coupon.price)">
-                    {{ coupon.price }}
-                </a>
+            <strong>Currently selected company name: {{selectedCompanyName}}</strong>
+            <hr />
+    
+            <div class="btn-group">
+                <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Prices <i class="fas fa-angle-down"></i>
+                </button>
+                <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" v-for="coupon in coupons" v-on:click="priceFilterSelected(coupon.price)">
+                        {{ coupon.price }}
+                    </a>
+                </div>
             </div>
-        </div>
-        <strong>Currently selected price: {{selectedPrice}}</strong>
-
-        <!-- <ul>
-            <li v-for="coupon in filteredPrice">{{ coupon.price }}</li>
-        </ul> -->
-
-        <hr />
-
-        <div class="card-deck">
-            <div class="card" v-for="coupon in filteredCoupons">
-                <img :src="'images/' + coupon.gambar" />
-        
-                <div class="card-body">
-                    <h5 class="card-title">{{coupon.couponName}}</h5>
-                    <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
-                    <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
-                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. Not valid at
-                            {{coupon.unvalidPlaces}} and for {{coupon.unvalidThings}}.</small></p>
+            <strong>Currently selected price: {{selectedPrice}}</strong>
+    
+            <!-- <ul>
+                <li v-for="coupon in filteredPrice">{{ coupon.price }}</li>
+            </ul> -->
+    
+            <hr />
+    
+            <div class="card-columns">
+                <div class="card" v-for="coupon in filteredCoupons">
+                    <img :src="'images/' + coupon.gambar"/>
+            
+                    <div class="card-body">
+                        <h5 class="card-title">{{coupon.couponName}}</h5>
+                        <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
+                        <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
+                        <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. Not valid at
+                                {{coupon.invalidPlaces}} and for {{coupon.invalidThings}}.</small></p>
+                    </div>
                 </div>
             </div>
         </div>

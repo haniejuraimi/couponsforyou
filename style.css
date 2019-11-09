@@ -114,6 +114,8 @@ nav ul li a {
   display: none;
 }
 
+
+
 @media(max-width: 500px) {
   .logo {
     position: fixed;
@@ -145,4 +147,22 @@ nav ul li a {
     display: block;
   }
   
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+
+.card img {
+  width: 100%;
 }
