@@ -25,7 +25,7 @@ var app = new Vue({
             {
                 companyName: 'KFC',
                 code: '8FOR8',
-                price: '$8',
+                price: '$8.00',
                 couponName: '3pc Chicken & 5 Tenders',
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
@@ -35,7 +35,7 @@ var app = new Vue({
             {
                 companyName: 'KFC',
                 code: 'NUGGETS',
-                price: '$3',
+                price: '$3.00',
                 couponName: '9pc Nuggets',
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
@@ -45,7 +45,7 @@ var app = new Vue({
             {
                 companyName: 'KFC',
                 code: 'ANY2BOWLS',
-                price: '$5',
+                price: '$5.00',
                 couponName: 'Any 2 Bowls',
                 dueDate: '19 Nov 2019',
                 invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
