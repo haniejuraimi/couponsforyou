@@ -12,24 +12,14 @@ var app = new Vue({
                 unvalidThings: 'KFC Delivery and KFC Corporate Events',
                 gambar: "kfc_5.JPG"
             },
-            // {
-            //     companyName: 'KFC',
-            //     code: '2TENDERS',
-            //     price: '$1.95',
-            //     couponName: 'Hot & Crispy Tenders (2 pcs)',
-            //     dueDate: '19 Nov 2019',
-            //     unvalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
-            //     unvalidThings:'KFC Delivery and KFC Corporate Events'
-            // },
-
             {
-                companyName: 'Eighteen Chefs',
+                companyName: 'KFC',
                 code: '2TENDERS',
                 price: '$10',
-                couponName: '$10 off',
-                dueDate: '',
-                unvalidPlaces: '',
-                unvalidThings: '',
+                couponName: '2pc Chicken Meal',
+                dueDate: '19 Nov 2019',
+                invalidPlaces: 'KFC Jewel Changi Airport, Kidzania and Singapore Zoo',
+                invalidThings: 'KFC Delivery and KFC Corporate Events',
                 gambar: ""
             }
         ],
