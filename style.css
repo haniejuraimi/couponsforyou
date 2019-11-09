@@ -1,22 +1,8 @@
-/* .btn-circle {
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-  padding: 0;
-  border-radius: 50%;
-}
-
-
-.btn-circle i {
-  position: relative;
-  top: -1px;
-} */
-
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
