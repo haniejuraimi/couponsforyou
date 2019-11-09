@@ -89,6 +89,7 @@
                             {{ companyName }}</a>
                     </div>
                 </div>
+                <!-- <button class="button-clear" v-on:click="clearCompanyNameFilter">Clear filter</button> -->
                 <div class="btn-group" role="group">
                     <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -102,7 +103,9 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="badge badge-secondary">Secondary</a>
+            <br />
+            <a class="badge badge-primary" @click="clearFoodOutletsFilter">{{selectedCompanyName}} </a>
+            <a class="badge badge-primary" @click="clearPriceFilter">{{selectedPrice}}</a>
             <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
 
             <!-- <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button> -->
@@ -128,6 +131,8 @@
             </div>
         </div>
     </div>
+
+    <br>
 
     <div id="submitcoupon" class="container">
         <div class="row justify-content-center">
