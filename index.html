@@ -21,13 +21,15 @@
                     <div class="menu-icon">
                         <i class="fa fa bars fa-2x"></i>
                     </div>
-                    <div class="logo">
-                        COUPONSFORYOU
-                    </div>
+                    <div class="logo"><strong>COUPONSFORYOU</strong> </div>
                     <div class="menu">
                         <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#submitcoupon">Send Us A Coupon</a></li>
+                            <li><a href="#home">
+                                    <p><u>Home</u></p>
+                                </a></li>
+                            <li><a href="#submitcoupon">
+                                    <p><u>Send Us A Coupon</u></p>
+                                </a></li>
                         </ul>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -64,8 +66,8 @@
             <div id="home" class="content">
                 <div class="jumbotron">
                     <h1 class="display-4">Hello, Singapore!</h1>
-                    <p class="lead">We are a group of 3 students from Madrasah Aljunied and this is the website we are
-                        able to create after a year of learning how to code!</p>
+                    <p class="lead">We are a group of students who created this website to help Singaporeans save their
+                        money when buying food!</p>
                     <hr class="my-4">
                     <p>You can find the latest deals and promotions from food outlets in Singapore! You can also find
                         meals and deals within your budget, all in one website!</p>
@@ -75,81 +77,100 @@
         </div>
 
         <div class="content">
-            <div class="btn-group">
-                <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Food Outlets <i class="fas fa-angle-down"></i>
-                </button>
-                <button class="button-clear" v-on:click="clearFoodOutletsFilter">Clear filter</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" v-for="companyName in couponsWithUniqueCompanyNames"
-                        v-on:click="companyNameFilterSelected(companyName)">
-                        {{ companyName }}
-                    </a>
-                </div>
-            </div>
-            <strong>Currently selected company name: {{selectedCompanyName}}</strong>
-            <hr />
-
-            <div class="btn-group">
-                <button class="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Prices <i class="fas fa-angle-down"></i>
-                </button>
-                <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" v-for="price in couponsWithUniquePrices" v-on:click="priceFilterSelected(price)">
-                        {{ price }}
-                    </a>
-                </div>
-            </div>
-            <strong>Currently selected price: {{selectedPrice}}</strong>
-
-            <hr />
-
-            <div class="card-columns">
-                <div class="card" v-for="coupon in filteredCoupons">
-                    <img :src="'images/' + coupon.gambar" />
-
-                    <div class="card-body">
-                        <h5 class="card-title">{{coupon.couponName}}</h5>
-                        <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
-                        <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
-                        <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. Not valid at
-                                {{coupon.invalidPlaces}} and for {{coupon.invalidThings}}.</small></p>
+            <div class="btn-group" role="group">
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Food Outlets
+                    </button>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" v-for="companyName in couponsWithUniqueCompanyNames"
+                            v-on:click="companyNameFilterSelected(companyName)">
+                            {{ companyName }}</a>
                     </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Prices
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="prices-dropdown">
+                        <a class="dropdown-item" v-for="price in couponsWithUniquePrices"
+                            v-on:click="priceFilterSelected(price)">
+                            {{ price }}
+                        </a>
+                    </div>
+                </div>
+                <!-- <button class="button-clear" v-on:click="clearFoodOutletsFilter">Clear filter</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" v-for="companyName in couponsWithUniqueCompanyNames"
+                            v-on:click="companyNameFilterSelected(companyName)">
+                            {{ companyName }}
+                        </a>
+                    </div> -->
+            </div>
+            <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
+
+            <!-- <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button> -->
+            <!-- <div class="dropdown-menu">
+                <a class="dropdown-item" v-for="price in couponsWithUniquePrices"
+                    v-on:click="priceFilterSelected(price)">
+                    {{ price }}
+                </a>
+            </div> -->
+        </div>
+        <!-- <strong>Currently selected price: {{selectedPrice}}</strong> -->
+        <div class="card-columns">
+            <div class="card" v-for="coupon in filteredCoupons">
+                <img :src="'images/' + coupon.gambar" />
+
+                <div class="card-body">
+                    <h5 class="card-title">{{coupon.couponName}}</h5>
+                    <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
+                    <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
+                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. Not valid at
+                            {{coupon.invalidPlaces}} and for {{coupon.invalidThings}}.</small></p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="submitcoupon" class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-                    <div class="row">
-                        <div class="col text-center">
-                            <h1>Send Us A Coupon</h1>
-                            <p class="lead">If you have a coupon that you would like to share, send us an email and we
-                                will upload it for you!</p>
-                        </div>
+    <div id="submitcoupon" class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1>Send Us A Coupon</h1>
+                        <p class="lead">If you have a coupon that you would like to share, send us an email and
+                            we
+                            will upload it for you!</p>
                     </div>
-                    <div class="col">
-                        <input type="email" class="form-control" placeholder="Email"> <button
-                            class="btn btn-primary mt-4">Submit</button>
-                    </div>
+                </div>
+                <div class="col" style="text-align: center;">
+                    <a class="btn btn-primary btn-lg"
+                        href="mailto:hanie@couponforyou.com?subject=I have a coupon to submit!&body=I will be attaching the image here.">
+                        Get in touch with us!
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src="main.js"></script>
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

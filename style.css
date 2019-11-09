@@ -42,6 +42,9 @@ header{
   background-size: cover;
 }
 
+p {
+  text-align: center;
+}
 .content {
   width: 90%;
   margin: 4em auto;
@@ -73,7 +76,7 @@ header{
 }
 
 .button-clear {
-  background-color: rgba(134, 28, 28, 0.87);
+  background-color: rgba(134, 54, 54, 0.555);
   border: 1cm;
   color: white;
   padding: 15px 32px;
@@ -88,6 +91,10 @@ header{
 nav {
   position: fixed;
   width: 100%;
+}
+
+.logo {
+  color: #000;
 }
 
 nav ul {
