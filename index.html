@@ -25,7 +25,7 @@
                     <div class="logo"> COUPONSFORYOU </div>
                     <div class="menu">
                         <ul>
-                            <li><a href="#home" class="cool-link">
+                            <li><a href="#">
                                     <p><u>Home</u></p>
                                 </a></li>
                             <li><a href="#submitcoupon" class="cool-link">
@@ -48,6 +48,9 @@
     
                     </div>
                 </nav>
+
+               
+
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -139,6 +142,12 @@
                 </a>
             </div> -->
         </div>
+
+        <div class="clearfix">
+            <div class="spinner-border float-right" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         <div class="card-columns">
             <div class="card" v-for="coupon in filteredCoupons">
                 <img :src="'images/' + coupon.image" />
@@ -152,7 +161,6 @@
             </div>
         </div>
     </div>
-
     <br>
 
     <div id="submitcoupon" class="container">

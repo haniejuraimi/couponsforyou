@@ -204,9 +204,11 @@ var app = new Vue({
                     return true;
                 } else {
                     return false;
+                    
                 }
             });
         },
+        
     },
     computed: {
         filteredCoupons: function () {
