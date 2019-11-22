@@ -18,7 +18,9 @@ header{
 }
 
 p {
-  text-align: center;
+  text-align: center;\
+}
+
 nav {
   overflow: hidden;
  /* Set the navbar to fixed position */
