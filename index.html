@@ -21,7 +21,7 @@
                     <div class="menu-icon">
                         <i class="fa fa bars fa-2x"></i>
                     </div>
-                    <div class="logo"><strong>COUPONSFORYOU</strong> </div>
+                    <div class="logo"> COUPONSFORYOU </div>
                     <div class="menu">
                         <ul>
                             <li><a href="#home">
@@ -35,9 +35,9 @@
                 </nav>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-ctarget="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-ctarget="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active" id="subwaypreview">
@@ -51,14 +51,14 @@
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                     </a>
-                  </div>
+                </div>
             </header>
 
 
@@ -68,13 +68,12 @@
                     <p class="lead">We are a group of students who created this website to help Singaporeans save their
                         money when buying food!</p>
                     <hr class="my-4">
-                    <p>You can find the latest deals and promotions from food outlets in Singapore! You can also find
+                    <p>You can find the latest promotions from food outlets around Singapore! You can also find
                         meals and deals within your budget, all in one website!</p>
                 </div>
-
             </div>
         </div>
-
+        <br>
         <div class="content">
             <div class="btn-group" role="group">
                 <div class="btn-group" role="group">
@@ -86,9 +85,11 @@
                     <div class="dropdown-menu" aria-labelledby="companyName-dropdown">
                         <a class="dropdown-item" v-for="companyName in couponsWithUniqueCompanyNames"
                             v-on:click="companyNameFilterSelected(companyName)">
-                            {{ companyName }}</a>
+                            {{ companyName }}
+                        </a>
                     </div>
                 </div>
+                <!-- <button class="button-clear" v-on:click="clearCompanyNameFilter">Clear filter</button> -->
                 <div class="btn-group" role="group">
                     <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -102,7 +103,10 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="badge badge-secondary">Secondary</a>
+            <br />
+            <a class="badge badge-primary" @click="clearFoodOutletsFilter" class="far fa-trash-alt ml-2">{{selectedCompanyName}} </a> how do i add an
+            icon beside it T_T
+            <a class="badge badge-primary" @click="clearPriceFilter">{{selectedPrice}}</a>
             <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
 
             <!-- <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button> -->
@@ -113,7 +117,6 @@
                 </a>
             </div> -->
         </div>
-        <!-- <strong>Currently selected price: {{selectedPrice}}</strong> -->
         <div class="card-columns">
             <div class="card" v-for="coupon in filteredCoupons">
                 <img :src="'images/' + coupon.gambar" />
@@ -128,6 +131,8 @@
             </div>
         </div>
     </div>
+
+    <br>
 
     <div id="submitcoupon" class="container">
         <div class="row justify-content-center">

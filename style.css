@@ -35,7 +35,8 @@ padding-bottom: 6em;
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #CD5C5C;  /* fallback for old browsers */
+  background: #D98880;
+  /* #CD5C5C;  fallback for old browsers */
 }
 
 header{ 
@@ -100,9 +101,9 @@ nav {
   width: 100%;
 }
 
-.logo {
+/* .logo {
   color: #000;
-}
+} */
 
 nav ul {
   list-style: none;
@@ -200,4 +201,8 @@ nav ul li a {
 .display-4 {
   text-align: center;
   margin-top: -0.6em;
+}
+
+.row {
+  color: white;
 }
