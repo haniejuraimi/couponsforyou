@@ -5,17 +5,38 @@ html, body {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #D98880;
+  /* #CD5C5C;  fallback for old browsers */
+}
+
+header{ 
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+p {
+  text-align: center;\
+}
 
 nav {
   overflow: hidden;
-  position: fixed; /* Set the navbar to fixed position */
+ /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
 }
 
+.toast {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+}
+
+
 #carouselExampleIndicators {
   height:100vh;
-  padding-top: 7em;
+  padding-top: 3em;
   padding-left: 10em;
   padding-right: 10em;
   padding-bottom: 3em;
@@ -50,7 +71,7 @@ p {
 }
 
 #subwaypreview {
-padding-top: 3.5em;
+padding-top: 2.5em;
 }
 
 .content {
@@ -62,15 +83,15 @@ padding-top: 3.5em;
 }
 
 .logo {
-  position: fixed;
   float: left;
   margin: 16px 36px;
   color: #fff;
   font-weight: bold;
   font-size: 24px;
+  letter-spacing: 2px;
 }
 
-.button {
+/* .button {
   background-color: #255ca3f5;
   border: 1cm;
   color: white;
@@ -94,11 +115,11 @@ padding-top: 3.5em;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-}
+} */
 
 nav {
-  position: fixed;
   width: 100%;
+  line-height: 60px;
 }
 
 /* .logo {
@@ -111,8 +132,9 @@ nav ul {
   overflow: hidden;
   color: #fff;
   padding: 0;
-  text-align: center;
+  text-align: right;
   margin: 0;
+  padding-right: 40px;
   transition: 1s;
 }
 
@@ -138,10 +160,9 @@ nav ul li a {
   box-sizing: border-box;
   padding: 15px 24px;
   cursor: pointer;
+  color: #fff;
   display: none;
 }
-
-
 
 @media(max-width: 500px) {
   .logo {
@@ -160,7 +181,7 @@ nav ul li a {
   }
 
   .showing {
-    max-height: 20em;
+    max-height: 34em;
   }
 
   nav ul li {
@@ -207,3 +228,11 @@ nav ul li a {
   color: white;
 }
 
+.pointer {
+  cursor: pointer;
+  
+}
+
+.selectedOption {
+  color: white !important;
+}
