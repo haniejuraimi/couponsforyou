@@ -25,10 +25,10 @@
                     <div class="logo"> COUPONSFORYOU </div>
                     <div class="menu">
                         <ul>
-                            <li><a href="#home">
+                            <li><a href="#home" class="cool-link">
                                     <p><u>Home</u></p>
                                 </a></li>
-                            <li><a href="#submitcoupon">
+                            <li><a href="#submitcoupon" class="cool-link">
                                     <p><u>Send Us A Coupon</u></p>
                                 </a></li>
                         </ul>
@@ -55,15 +55,15 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                      <div class="carousel-item active" id="subwaypreview">
-                        <img src="images/subway.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="images/5dolapop.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="images/$5.jpg" class="d-block w-100" alt="...">
-                      </div>
+                        <div class="carousel-item active" id="subwaypreview">
+                            <img src="images/subway.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/5dolapop.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/$5.jpg" class="d-block w-100" alt="...">
+                        </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -85,7 +85,9 @@
                         money when buying food!</p>
                     <hr class="my-4">
                     <p>You can find the latest promotions from food outlets around Singapore! You can also find
-                        meals and deals within your budget, all in one website!</p>
+                        meals and deals within your budget, all in one website!
+                    </p>
+                    <button @click="printCoupons">Print COupons</button>
                 </div>
             </div>
         </div>
@@ -105,7 +107,6 @@
                         </a>
                     </div>
                 </div>
-                <!-- <button class="button-clear" v-on:click="clearCompanyNameFilter">Clear filter</button> -->
                 <div class="btn-group" role="group">
                     <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,9 +121,14 @@
                 </div>
             </div>
             <br />
-            <a class="badge badge-primary" @click="clearFoodOutletsFilter" class="far fa-trash-alt ml-2">{{selectedCompanyName}} </a> how do i add an
-            icon beside it T_T
-            <a class="badge badge-primary" @click="clearPriceFilter">{{selectedPrice}}</a>
+
+            <a v-if="selectedCompanyName" class="badge badge-primary pointer selectedOption"
+                @click="clearFoodOutletsFilter">
+                {{selectedCompanyName}} &#9747;
+            </a>
+            <a v-if="selectedPrice" class="badge badge-primary pointer selectedOption"
+                @click="clearPriceFilter">{{selectedPrice}} &#9747;
+            </a>
             <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
 
             <!-- <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button> -->
@@ -135,14 +141,13 @@
         </div>
         <div class="card-columns">
             <div class="card" v-for="coupon in filteredCoupons">
-                <img :src="'images/' + coupon.gambar" />
+                <img :src="'images/' + coupon.image" />
 
                 <div class="card-body">
                     <h5 class="card-title">{{coupon.couponName}}</h5>
                     <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
                     <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
-                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. Not valid at
-                            {{coupon.invalidPlaces}} and for {{coupon.invalidThings}}.</small></p>
+                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. {{coupon.description}}</small></p>
                 </div>
             </div>
         </div>
@@ -173,6 +178,7 @@
 
     <br>
 
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -183,8 +189,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+
     <script src="main.js"></script>
+
 </body>
 
 </html>

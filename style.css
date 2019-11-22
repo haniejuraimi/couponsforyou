@@ -5,6 +5,20 @@ html, body {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #D98880;
+  /* #CD5C5C;  fallback for old browsers */
+}
+
+header{ 
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+p {
+  text-align: center;
 nav {
   overflow: hidden;
  /* Set the navbar to fixed position */
@@ -72,9 +86,10 @@ padding-top: 2.5em;
   color: #fff;
   font-weight: bold;
   font-size: 24px;
+  letter-spacing: 2px;
 }
 
-.button {
+/* .button {
   background-color: #255ca3f5;
   border: 1cm;
   color: white;
@@ -98,10 +113,11 @@ padding-top: 2.5em;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-}
+} */
 
 nav {
   width: 100%;
+  line-height: 60px;
 }
 
 /* .logo {
@@ -114,8 +130,9 @@ nav ul {
   overflow: hidden;
   color: #fff;
   padding: 0;
-  text-align: center;
+  text-align: right;
   margin: 0;
+  padding-right: 40px;
   transition: 1s;
 }
 
@@ -141,6 +158,7 @@ nav ul li a {
   box-sizing: border-box;
   padding: 15px 24px;
   cursor: pointer;
+  color: #fff;
   display: none;
 }
 
@@ -161,7 +179,7 @@ nav ul li a {
   }
 
   .showing {
-    max-height: 20em;
+    max-height: 34em;
   }
 
   nav ul li {
@@ -206,4 +224,13 @@ nav ul li a {
 
 .row {
   color: white;
+}
+
+.pointer {
+  cursor: pointer;
+  
+}
+
+.selectedOption {
+  color: white !important;
 }
