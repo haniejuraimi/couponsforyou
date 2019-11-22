@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed&display=swap" rel="stylesheet">
 
     <title>couponsforyou</title>
 </head>
@@ -51,6 +51,19 @@
                                     Hello, world! This is a toast message.
                                 </div>
                             </div>
+                    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false" style="position: absolute; top: 2em; right: 3em;">
+                            <div class="toast-header">
+                              <strong class="mr-auto">Hello, Singapore!</strong>
+                              <small>11 mins ago</small>
+                              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="toast-body">
+                                    You can find the latest promotions from food outlets around Singapore! You can also find
+                                    meals and deals within your budget, all in one website!
+                            </div>
+                        </div>
 
                     </div>
                 </nav>
@@ -88,15 +101,6 @@
 
 
             <div id="home" class="content">
-                <div class="jumbotron">
-                    <h1 class="display-4">Hello, Singapore!</h1>
-                    <p class="lead">We are a group of students who created this website to help Singaporeans save their
-                        money when buying food!</p>
-                    <hr class="my-4">
-                    <p>You can find the latest promotions from food outlets around Singapore! You can also find
-                        meals and deals within your budget, all in one website!
-                    </p>
-                </div>
             </div>
         </div>
         <br>
@@ -146,27 +150,24 @@
                     {{ price }}
                 </a>
             </div> -->
-        </div>
 
-        <div class="clearfix">
-            <div class="spinner-border float-right" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <div class="card-columns">
-            <div class="card" v-for="coupon in filteredCoupons">
-                <img :src="'images/' + coupon.image" />
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="card" v-for="coupon in filteredCoupons">
+                        <img :src="'images/' + coupon.image" />
 
-                <div class="card-body">
-                    <h5 class="card-title">{{coupon.couponName}}</h5>
-                    <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
-                    <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
-                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}.
-                            {{coupon.description}}</small></p>
+                        <div class="card-body">
+                            <h5 class="card-title">{{coupon.couponName}}</h5>
+                            <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
+                            <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
+                            <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}.
+                                    {{coupon.description}}</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
         <br>
 
         <div id="submitcoupon" class="container">
@@ -221,27 +222,25 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 
-    <br>
+        <br>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
 
-    <script src="main.js"></script>
+        <script src="main.js"></script>
 
 </body>
 
