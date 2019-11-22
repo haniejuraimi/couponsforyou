@@ -171,6 +171,7 @@ var app = new Vue({
         ],
         selectedCompanyName: null,
         selectedPrice: null,
+        newCouponName: "",
     },
     mounted: async function() {
         const db = firebase.firestore();
@@ -180,8 +181,17 @@ var app = new Vue({
         this.coupons = snapshot.docs.map(doc => doc.data());
     },
     methods: {
-        printCoupons: function() {
-            console.log(this.coupons.length);
+        submitNewCoupon: function() {
+            const newCoupon = {
+                couponName: this.newCouponName,
+                couponCompany: this.newCouponCompany,
+                couponDescription: this.newCouponDescription,
+                CouponDueDate: this.newCouponDueDate,
+                // CouponImage: this.newCouponImage,
+                CouponPrice: this.newCouponPrice,
+            }
+
+            console.log("To submit to firebase", newCoupon)
         },
         companyNameFilterSelected: function (selectedCompanyName) {
             this.selectedCompanyName = selectedCompanyName;
