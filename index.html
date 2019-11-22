@@ -69,7 +69,9 @@
                         money when buying food!</p>
                     <hr class="my-4">
                     <p>You can find the latest promotions from food outlets around Singapore! You can also find
-                        meals and deals within your budget, all in one website!</p>
+                        meals and deals within your budget, all in one website!
+                    </p>
+                    <button @click="printCoupons">Print COupons</button>
                 </div>
             </div>
         </div>
@@ -89,7 +91,6 @@
                         </a>
                     </div>
                 </div>
-                <!-- <button class="button-clear" v-on:click="clearCompanyNameFilter">Clear filter</button> -->
                 <div class="btn-group" role="group">
                     <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,10 +106,12 @@
             </div>
             <br />
 
-            <a v-if="selectedCompanyName" class="badge badge-primary pointer" @click="clearFoodOutletsFilter">
+            <a v-if="selectedCompanyName" class="badge badge-primary pointer selectedOption"
+                @click="clearFoodOutletsFilter">
                 {{selectedCompanyName}} &#9747;
             </a>
-            <a v-if="selectedPrice" class="badge badge-primary pointer" @click="clearPriceFilter">{{selectedPrice}} &#9747;
+            <a v-if="selectedPrice" class="badge badge-primary pointer selectedOption"
+                @click="clearPriceFilter">{{selectedPrice}} &#9747;
             </a>
             <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
 
@@ -122,14 +125,13 @@
         </div>
         <div class="card-columns">
             <div class="card" v-for="coupon in filteredCoupons">
-                <img :src="'images/' + coupon.gambar" />
+                <img :src="'images/' + coupon.image" />
 
                 <div class="card-body">
                     <h5 class="card-title">{{coupon.couponName}}</h5>
                     <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
                     <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
-                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. Not valid at
-                            {{coupon.invalidPlaces}} and for {{coupon.invalidThings}}.</small></p>
+                    <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}. {{coupon.description}}</small></p>
                 </div>
             </div>
         </div>
@@ -171,7 +173,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+
     <script src="main.js"></script>
+
 </body>
 
 </html>
