@@ -12,6 +12,11 @@ nav {
   width: 100%; /* Full width */
 }
 
+.toast {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+}
+
 
 #carouselExampleIndicators {
   height:100vh;
