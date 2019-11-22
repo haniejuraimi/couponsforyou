@@ -18,7 +18,7 @@ header{
 }
 
 p {
-  text-align: center;\
+  text-align: center;
 }
 
 nav {
@@ -224,9 +224,6 @@ nav ul li a {
   margin-top: -0.6em;
 }
 
-.row {
-  color: white;
-}
 
 .pointer {
   cursor: pointer;
