@@ -24,10 +24,10 @@
                     <div class="logo"> COUPONSFORYOU </div>
                     <div class="menu">
                         <ul>
-                            <li><a href="#home">
+                            <li><a href="#home" class="cool-link">
                                     <p><u>Home</u></p>
                                 </a></li>
-                            <li><a href="#submitcoupon">
+                            <li><a href="#submitcoupon" class="cool-link">
                                     <p><u>Send Us A Coupon</u></p>
                                 </a></li>
                         </ul>
@@ -104,9 +104,12 @@
                 </div>
             </div>
             <br />
-            <a class="badge badge-primary" @click="clearFoodOutletsFilter" class="far fa-trash-alt ml-2">{{selectedCompanyName}} </a> how do i add an
-            icon beside it T_T
-            <a class="badge badge-primary" @click="clearPriceFilter">{{selectedPrice}}</a>
+
+            <a v-if="selectedCompanyName" class="badge badge-primary pointer" @click="clearFoodOutletsFilter">
+                {{selectedCompanyName}} &#9747;
+            </a>
+            <a v-if="selectedPrice" class="badge badge-primary pointer" @click="clearPriceFilter">{{selectedPrice}} &#9747;
+            </a>
             <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
 
             <!-- <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button> -->
@@ -157,6 +160,7 @@
 
     <br>
 
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -167,7 +171,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="main.js"></script>
 </body>
 
