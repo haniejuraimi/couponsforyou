@@ -172,6 +172,11 @@ var app = new Vue({
         selectedCompanyName: null,
         selectedPrice: null,
         newCouponName: "",
+        newCouponCompany: "",
+        newCouponDescription: "",
+        newCouponDueDate: "",
+        newCouponPrice: "",
+        newCouponTags: "",
     },
     mounted: async function() {
         const db = firebase.firestore();
@@ -184,11 +189,13 @@ var app = new Vue({
         submitNewCoupon: function() {
             const newCoupon = {
                 couponName: this.newCouponName,
-                couponCompany: this.newCouponCompany,
-                couponDescription: this.newCouponDescription,
-                CouponDueDate: this.newCouponDueDate,
+                companyName: this.newCouponCompany,
+                description: this.newCouponDescription,
+                dueDate: this.newCouponDueDate,
                 // CouponImage: this.newCouponImage,
-                CouponPrice: this.newCouponPrice,
+                price: this.newCouponPrice,
+                isVerified: false,
+                tags: this.newCouponTags.split(',').map(eachTag => eachTag.trim()),
             }
 
             console.log("To submit to firebase", newCoupon)
