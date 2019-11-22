@@ -47,6 +47,11 @@ header{
 p {
   text-align: center;
 }
+
+#subwaypreview {
+padding-top: 3.5em;
+}
+
 .content {
   width: 90%;
   margin: 4em auto;
