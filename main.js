@@ -1,3 +1,4 @@
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -178,6 +179,7 @@ var app = new Vue({
     },
 
     methods: {
+        
         companyNameFilterSelected: function (selectedCompanyName) {
             this.selectedCompanyName = selectedCompanyName;
         },
@@ -199,9 +201,11 @@ var app = new Vue({
                     return true;
                 } else {
                     return false;
+                    
                 }
             });
         },
+        
     },
 
     computed: {
@@ -276,3 +280,4 @@ var app = new Vue({
     
 
 })
+
