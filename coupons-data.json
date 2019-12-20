@@ -1,0 +1,12 @@
+{
+	"coupons": [{
+		"companyName": "BURGER KING",
+		"code": "-",
+		"price": "$5.50",
+		"couponName": "Turkey Ham Croissanwich w/ Egg Meal",
+		"dueDate": "25 Feb 2020",
+		"invalidPlaces": "BK Kallang Leisure Park, Jewel and Airport Stores",
+		"invalidThings": "BK Delivery and Catering  ",
+		"gambar": "IMG_1322.jpg"
+	}]
+}
