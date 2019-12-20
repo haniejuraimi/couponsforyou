@@ -122,10 +122,6 @@ nav {
   line-height: 60px;
 }
 
-/* .logo {
-  color: #000;
-} */
-
 nav ul {
   list-style: none;
   background: rgba(0, 0, 0, 0);
@@ -201,15 +197,6 @@ nav ul li a {
     padding: 0 10px;
   }
 }
-
-/* .card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
-} */
 
 .card img {
   width: 100%;
