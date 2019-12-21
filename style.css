@@ -28,15 +28,10 @@ nav {
   width: 100%; /* Full width */
 }
 
-.toast {
-  font-family: 'Asap Condensed', sans-serif;
-  font-size: 18px;
-}
-
 
 #carouselExampleIndicators {
-  height:100vh;
-  padding-top: 3em;
+  height:85vh;
+  padding-top: 0em;
   padding-left: 10em;
   padding-right: 10em;
   padding-bottom: 3em;

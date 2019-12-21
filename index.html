@@ -141,15 +141,6 @@
             <a v-if="selectedPrice" class="badge badge-primary pointer selectedOption"
                 @click="clearPriceFilter">{{selectedPrice}} &#9747;
             </a>
-            <!-- <strong>Currently selected company name: {{selectedCompanyName}}</strong> -->
-
-            <!-- <button class="button-clear" v-on:click="clearPriceFilter">Clear filter</button> -->
-            <!-- <div class="dropdown-menu">
-                <a class="dropdown-item" v-for="price in couponsWithUniquePrices"
-                    v-on:click="priceFilterSelected(price)">
-                    {{ price }}
-                </a>
-            </div> -->
 
             <div class="row">
                 <div class="col-md-4 col-sm-12">
@@ -157,11 +148,11 @@
                         <img :src="'images/' + coupon.image" />
 
                         <div class="card-body">
-                            <h5 class="card-title">{{coupons.couponName}}</h5>
-                            <p class="card-text">Get {{coupons.price}} using code <strong>{{coupons.code}}</strong></p>
-                            <p class="card-text"><small class="text">From {{coupons.companyName}}</small></p>
-                            <p class="card-text"><small class="text-muted">Valid till {{coupons.dueDate}}.
-                                    {{coupons.description}}</small></p>
+                            <h5 class="card-title">{{coupon.couponName}}</h5>
+                            <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
+                            <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
+                            <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}.
+                                    {{coupon.description}}</small></p>
                         </div>
                     </div>
                 </div>
