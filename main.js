@@ -301,3 +301,6 @@ var app = new Vue({
 })
 
 $('.toast').toast("show")
+$(document).ready(function(){
+    $('.toast').toast('show');
+  });
