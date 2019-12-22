@@ -5,22 +5,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: #D98880;
-  /* #CD5C5C;  fallback for old browsers */
-}
-
-header{ 
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-}
-
-p {
-  text-align: center;
-}
-
 nav {
   overflow: hidden;
  /* Set the navbar to fixed position */
@@ -51,7 +35,7 @@ padding-bottom: 6em;
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #D98880;
+  background: #a2a8d3;
   /* #CD5C5C;  fallback for old browsers */
 }
 
