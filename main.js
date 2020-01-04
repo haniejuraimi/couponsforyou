@@ -14,8 +14,6 @@ var app = new Vue({
     el: '#app',
     data: {
         coupons: [],
-            // },
-        ],
         selectedCompanyName: null,
         selectedPrice: null,
         newCouponName: "",
@@ -79,7 +77,6 @@ var app = new Vue({
                     return true;
                 } else {
                     return false;
-                    
 
                 }
             });
