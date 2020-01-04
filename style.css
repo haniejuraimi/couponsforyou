@@ -213,6 +213,10 @@ nav ul li a {
   height: 180px;
 }
 
+.coupons-loading-spinner {
+  padding: 8px;
+  text-align: center;
+}
 
 .filters-button-group {
   margin-bottom: 8px;
