@@ -144,7 +144,6 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{coupon.couponName}}</h5>
-                            <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
                             <button type="button" @click="openCouponModal(coupon)" class="btn btn-primary" data-toggle="modal"
                                 data-target="#exampleModal">
                                 Show more
@@ -156,55 +155,6 @@
 
         </div>
         <br>
-        <!-- 
-        <div id="submitcoupon" class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h1>Send Us A Coupon</h1>
-                                    <p class="lead">If you have a coupon that you would like to share, send us an email
-                                        and we will upload it for you!</p>
-                                </div>
-                            </div>
-                            <div class="col" style="text-align: center;">
-                                <div class="form-group">
-                                    <label for="couponName">Name of Coupon</label>
-                                    <input v-model="newCouponName" class="form-control" id="couponName"
-                                        placeholder="Family Set/$5 off etc.">
-                                </div>
-                                <div class="form-group">
-                                    <label for="couponCompany">Name of Company</label>
-                                    <input v-model="newCouponCompany" class="form-control" id="couponCompany"
-                                        placeholder="Enter name of company">
-                                </div>
-                                <div class="form-group">
-                                    <label for="couponDescription">Description of Coupon</label>
-                                    <input v-model="newCouponDescription" class="form-control" id="couponDescription"
-                                        placeholder="Only available at Bugis Junction etc.">
-                                </div>
-                                <div class="form-group">
-                                    <label for="couponDueDate">Due Date of Coupon</label>
-                                    <input v-model="newCouponDueDate" class="form-control" id="couponDueDate"
-                                        placeholder="29 November 2019 etc.">
-                                </div>
-                               
-                                <div class="form-group">
-                                    <label for="couponTags">Coupon Tag(s)</label>
-                                    <input v-model="newCouponTags" class="form-control" id="couponTags"
-                                        placeholder="Halal/Non-Halal, Wester/Asian etc. ">
-                                </div>
-
-
-                                <button class="btn btn-primary" v-on:click="submitNewCoupon">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <button onclick="topFunction()" id="myBtn" title="Go to top">top</button>
 
