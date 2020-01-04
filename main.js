@@ -25,6 +25,7 @@ var app = new Vue({
         newCouponTags: "",
 
         selectedCoupon: {},
+
     },
     mounted: async function () {
         const db = firebase.firestore();
