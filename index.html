@@ -73,6 +73,26 @@
                         </a>
                     </div>
                 </div>
+                <div class="btn-group" role="group">
+                    <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Location
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="prices-dropdown">
+                        <a class="dropdown-item" @click="setLocation('North')">
+                            North
+                        </a>
+                        <a class="dropdown-item" @click="setLocation('South')">
+                            South
+                        </a>
+                        <a class="dropdown-item" @click="setLocation('East')">
+                            East
+                        </a>
+                        <a class="dropdown-item" @click="setLocation('West')">
+                            West
+                        </a>
+                    </div>
+                </div>
             </div>
             <br />
 
@@ -83,9 +103,13 @@
             <a v-if="selectedPrice" class="badge badge-primary pointer selectedOption"
                 @click="clearPriceFilter">{{selectedPrice}} &#9747;
             </a>
+            <a v-if="selectedLocation" class="badge badge-primary pointer selectedOption"
+                @click="clearLocation">
+                {{selectedLocation}} &#9747;
+            </a>
 
             <div class="modal" tabindex="-1" role="dialog" v-if="showCouponModal" id="couponModal">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">{{selectedCoupon.couponName}}</h5>

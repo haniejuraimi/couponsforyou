@@ -16,6 +16,7 @@ var app = new Vue({
         coupons: [],
         selectedCompanyName: null,
         selectedPrice: null,
+        selectedLocation: null,
         newCouponName: "",
         newCouponCompany: "",
         newCouponDescription: "",
@@ -68,6 +69,12 @@ var app = new Vue({
         clearPriceFilter: function () {
             this.selectedPrice = null;
         },
+        setLocation: function (selectedLocation) {
+            this.selectedLocation = selectedLocation;
+        },
+        clearLocation: function () {
+            this.selectedLocation = null;
+        },
         filteredFoodOutlets: function () {
             const selectedCompanyName = this.selectedCompanyName;
             if (!selectedCompanyName) return this.coupons;
@@ -87,10 +94,14 @@ var app = new Vue({
         filteredCoupons: function () {
             const selectedPrice = this.selectedPrice;
             const selectedCompanyName = this.selectedCompanyName;
+            const selectedLocation = this.selectedLocation
+
+            if(!selectedPrice && !selectedCompanyName && !selectedLocation){
+                return this.coupons;
+            }
 
             // price is null, companyName is KFC
-            console.log({ selectedPrice, selectedCompanyName })
-
+            console.log({ selectedPrice, selectedCompanyName,selectedLocation })
 
             let couponsFilteredByPrice = this.coupons;
             if (selectedPrice) {
@@ -104,12 +115,10 @@ var app = new Vue({
                 });
             }
 
-            if (!selectedCompanyName) {
-                return couponsFilteredByPrice;
-            }
-
             console.log("at company name filter, the value of coupons filtered by price", couponsFilteredByPrice)
             const couponsFilteredByPriceAndCompanyName = couponsFilteredByPrice.filter(function (coupon) {
+                if(!this.selectedCompanyName) return true;
+
                 if (coupon.companyName === selectedCompanyName) {
                     return true;
                 } else {
@@ -117,8 +126,22 @@ var app = new Vue({
                 }
             })
 
+            console.log("at location filter, the value of coupons filtered by price and name", couponsFilteredByPriceAndCompanyName)
+            const couponsFilteredByPriceAndCompanyNameAndLocation = couponsFilteredByPriceAndCompanyName.filter(function(coupon) {
+                if(!selectedLocation){
+                    return true;
+                }
 
-            return couponsFilteredByPriceAndCompanyName;
+                if(!coupon.locationTags){ return false }
+
+                if (coupon.locationTags.includes(selectedLocation)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+
+            return couponsFilteredByPriceAndCompanyNameAndLocation;
         },
         couponsWithUniqueCompanyNames: function () {
             function getUnique(coupons) {
