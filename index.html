@@ -59,7 +59,7 @@
         </div>
 
         <div class="content">
-            <div class="btn-group" role="group">
+            <div class="btn-group filters-button-group" role="group">
                 <div class="btn-group" role="group">
                     <button id="companyName-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,17 +96,42 @@
                 @click="clearPriceFilter">{{selectedPrice}} &#9747;
             </a>
 
+            <div class="modal" tabindex="-1" role="dialog" v-if="showCouponModal" id="couponModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">{{selectedCoupon.couponName}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                @click="closeCouponModal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coupons-loading-spinner" v-if="filteredCoupons.length === 0">
+                <div class="spinner-border text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
             <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="card" v-for="coupon in filteredCoupons">
+                <div class="col-md-4  card-wrapper col-sm-12" v-for="coupon in filteredCoupons">
+                    <div class="card" data-toggle="modal" data-target="#couponModal" @click="openCouponModal(coupon)">
                         <img :src="'images/' + coupon.image" />
 
                         <div class="card-body">
                             <h5 class="card-title">{{coupon.couponName}}</h5>
                             <p class="card-text">Get {{coupon.price}} using code <strong>{{coupon.code}}</strong></p>
-                            <p class="card-text"><small class="text">From {{coupon.companyName}}</small></p>
-                            <p class="card-text"><small class="text-muted">Valid till {{coupon.dueDate}}.
-                                    {{coupon.description}}</small></p>
+                            <button data-toggle="modal" data-target="#couponModal" class="btn btn-primary"
+                                @click="openCouponModal(coupon)">Show more</button>
                         </div>
                     </div>
                 </div>
@@ -148,11 +173,6 @@
                                     <input v-model="newCouponDueDate" class="form-control" id="couponDueDate"
                                         placeholder="29 November 2019 etc.">
                                 </div>
-                                <!-- <div class="form-group">
-                                                <label for="couponImage">Image of Coupon</label>
-                                                <input v-model="newCouponImage" class="form-control" id="couponImage"
-                                                    placeholder="Enter image of coupon">
-                                        </div> -->
                                
                                 <div class="form-group">
                                     <label for="couponTags">Coupon Tag(s)</label>
