@@ -24,8 +24,7 @@ var app = new Vue({
         newCouponPrice: "",
         newCouponTags: "",
 
-        selectedCoupon: null,
-        showCouponModal: false
+        selectedCoupon: {},
     },
     mounted: async function () {
         const db = firebase.firestore();
@@ -37,11 +36,9 @@ var app = new Vue({
     methods: {
         openCouponModal: function (selectedCoupon) {
             this.selectedCoupon = selectedCoupon;
-
-            this.showCouponModal = true;
         },
-        closeCouponModal: function() {
-            this.showCouponModal = false;
+        closeCouponModal: function () {
+            this.selectedCoupon = {}
         },
         submitNewCoupon: function () {
             const newCoupon = {
@@ -96,12 +93,12 @@ var app = new Vue({
             const selectedCompanyName = this.selectedCompanyName;
             const selectedLocation = this.selectedLocation
 
-            if(!selectedPrice && !selectedCompanyName && !selectedLocation){
+            if (!selectedPrice && !selectedCompanyName && !selectedLocation) {
                 return this.coupons;
             }
 
             // price is null, companyName is KFC
-            console.log({ selectedPrice, selectedCompanyName,selectedLocation })
+            console.log({ selectedPrice, selectedCompanyName, selectedLocation })
 
             let couponsFilteredByPrice = this.coupons;
             if (selectedPrice) {
@@ -117,7 +114,7 @@ var app = new Vue({
 
             console.log("at company name filter, the value of coupons filtered by price", couponsFilteredByPrice)
             const couponsFilteredByPriceAndCompanyName = couponsFilteredByPrice.filter(function (coupon) {
-                if(!this.selectedCompanyName) return true;
+                if (!this.selectedCompanyName) return true;
 
                 if (coupon.companyName === selectedCompanyName) {
                     return true;
@@ -127,12 +124,12 @@ var app = new Vue({
             })
 
             console.log("at location filter, the value of coupons filtered by price and name", couponsFilteredByPriceAndCompanyName)
-            const couponsFilteredByPriceAndCompanyNameAndLocation = couponsFilteredByPriceAndCompanyName.filter(function(coupon) {
-                if(!selectedLocation){
+            const couponsFilteredByPriceAndCompanyNameAndLocation = couponsFilteredByPriceAndCompanyName.filter(function (coupon) {
+                if (!selectedLocation) {
                     return true;
                 }
-                
-                if(!coupon.locationTags){ return false }
+
+                if (!coupon.locationTags) { return false }
 
                 if (coupon.locationTags.includes(selectedLocation)) {
                     return true;
