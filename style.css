@@ -203,3 +203,22 @@ nav ul li a {
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
+
+.card-wrapper {
+  margin-bottom: 8px;
+}
+
+.carousel-item img {
+  object-fit: contain;
+  height: 180px;
+}
+
+
+.filters-button-group {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+#carouselExampleControls {
+  background: white;
+}
