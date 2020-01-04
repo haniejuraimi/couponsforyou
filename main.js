@@ -131,7 +131,7 @@ var app = new Vue({
                 if(!selectedLocation){
                     return true;
                 }
-
+                
                 if(!coupon.locationTags){ return false }
 
                 if (coupon.locationTags.includes(selectedLocation)) {
