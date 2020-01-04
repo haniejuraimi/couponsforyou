@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed&display=swap" rel="stylesheet">
+    <title>couponsforyou</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="wrapper">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html">COUPONSFORYOU</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="submit.html">Submit coupon</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+            </header>
+        </div>
+    </div>
+
+    <div id="submitcoupon" class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h1>Send Us A Coupon</h1>
+                                <p class="lead">If you have a coupon that you would like to share, send us an email
+                                    and we will upload it for you!</p>
+                            </div>
+                        </div>
+                        <div class="col" style="text-align: center;">
+                            <div class="form-group">
+                                <label for="couponName">Name of Coupon</label>
+                                <input v-model="newCouponName" class="form-control" id="couponName"
+                                    placeholder="Family Set/$5 off etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="couponCompany">Name of Company</label>
+                                <input v-model="newCouponCompany" class="form-control" id="couponCompany"
+                                    placeholder="Enter name of company">
+                            </div>
+                            <div class="form-group">
+                                <label for="couponDescription">Description of Coupon</label>
+                                <input v-model="newCouponDescription" class="form-control" id="couponDescription"
+                                    placeholder="Only available at Bugis Junction etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="couponDueDate">Due Date of Coupon</label>
+                                <input v-model="newCouponDueDate" class="form-control" id="couponDueDate"
+                                    placeholder="29 November 2019 etc.">
+                            </div>
+                            <!-- <div class="form-group">
+                                            <label for="couponImage">Image of Coupon</label>
+                                            <input v-model="newCouponImage" class="form-control" id="couponImage"
+                                                placeholder="Enter image of coupon">
+                                    </div> -->
+                            <div class="form-group">
+                                <label for="couponTags">Coupon Tag(s)</label>
+                                <input v-model="newCouponTags" class="form-control" id="couponTags"
+                                    placeholder="Halal/Non-Halal, Wester/Asian etc. ">
+                            </div>
+
+
+                            <button class="btn btn-primary" v-on:click="submitNewCoupon">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
