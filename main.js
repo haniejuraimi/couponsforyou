@@ -24,8 +24,11 @@ var app = new Vue({
         newCouponDueDate: "",
         newCouponPrice: "",
         newCouponTags: "",
+
+        selectedCoupon: null,
+        showCouponModal: false
     },
-    mounted: async function() {
+    mounted: async function () {
         const db = firebase.firestore();
         let couponsRef = db.collection('coupons');
 
@@ -33,7 +36,15 @@ var app = new Vue({
         this.coupons = snapshot.docs.map(doc => doc.data());
     },
     methods: {
-        submitNewCoupon: function() {
+        openCouponModal: function (selectedCoupon) {
+            this.selectedCoupon = selectedCoupon;
+
+            this.showCouponModal = true;
+        },
+        closeCouponModal: function() {
+            this.showCouponModal = false;
+        },
+        submitNewCoupon: function () {
             const newCoupon = {
                 couponName: this.newCouponName,
                 companyName: this.newCouponCompany,
@@ -69,10 +80,11 @@ var app = new Vue({
                 } else {
                     return false;
                     
+
                 }
             });
         },
-        
+
     },
     computed: {
         filteredCoupons: function () {
@@ -151,22 +163,22 @@ var app = new Vue({
 mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     $('.toast').toast('show');
-  });
+});
