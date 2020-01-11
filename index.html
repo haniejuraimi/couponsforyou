@@ -51,7 +51,7 @@
                 <div class="btn-group" role="group">
                     <button id="companyName-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Food Outlets
+                        Food Types
                     </button>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="companyName-dropdown">
@@ -122,10 +122,12 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-text">Valid at {{selectedCoupon.description}} until <strong>{{selectedCoupon.dueDate}}. {{extraDescription}} </strong></p>
+                            <p class="card-text">Valid at {{selectedCoupon.description}} until
+                                <strong>{{selectedCoupon.dueDate}}. {{extraDescription}} </strong></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="closeCouponModal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                @click="closeCouponModal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -144,8 +146,8 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{coupon.couponName}}</h5>
-                            <button type="button" @click="openCouponModal(coupon)" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModal">
+                            <button type="button" @click="openCouponModal(coupon)" class="btn btn-primary"
+                                data-toggle="modal" data-target="#exampleModal">
                                 Show more
                             </button>
                         </div>

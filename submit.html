@@ -16,70 +16,119 @@
 </head>
 
 <body>
-
-    <div id="app">
+    <div id="submitcoupon" class="container">
         <div class="wrapper">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="index.html">COUPONSFORYOU</a>
-                    <a href="index.html" id="submit-button-nav"><i class="fas fa-undo-alt""></i></a>
+                    <a href="index.html" id="submit-button-nav"><i class="fas fa-undo-alt"></i></a>
                 </nav>
             </header>
         </div>
-    </div>
-
-    <div id="submitcoupon" class="container">
-        <div class="row justify-content-center">
+        <div class=" row justify-content-center">
             <div class="col-12 col-md-8 col-lg-8 col-xl-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col text-center">
+                            <div class="col-12 text-center">
                                 <h1>Send Us A Coupon</h1>
-                                <p class="lead">If you have a coupon that you would like to share, send us an email
+                                <p class="lead">If you have a coupon that you would like to share, send
+                                    us an email
                                     and we will upload it for you!</p>
                             </div>
-                        </div>
-                        <div class="col" style="text-align: center;">
-                            <div class="form-group">
-                                <label for="couponName">Name of Coupon</label>
-                                <input v-model="newCouponName" class="form-control" id="couponName"
-                                    placeholder="Family Set/$5 off etc.">
+
+                            <div class="col-12" style="text-align: center;">
+                                <div class="form-group">
+                                    <label for="couponName">Name of Coupon</label>
+                                    <input v-model="newCouponName" class="form-control" id="couponName"
+                                        placeholder="Family Set/$5 off etc." />
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="couponCompany">Name of Company</label>
-                                <input v-model="newCouponCompany" class="form-control" id="couponCompany"
-                                    placeholder="Enter name of company">
+                            <div class="col-12" style="text-align: center;">
+                                <div class="form-group">
+                                    <label for="couponCompany">Name of Company</label>
+                                    <input v-model="newCouponCompany" class="form-control" id="couponCompany"
+                                        placeholder="Burger King/KFC etc.">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="couponDescription">Description of Coupon</label>
-                                <input v-model="newCouponDescription" class="form-control" id="couponDescription"
-                                    placeholder="Only available at Bugis Junction etc.">
+                            <div class="col-12" style="text-align: center;">
+                                <div class="form-group">
+                                    <label for="couponDescription">Description of Coupon</label>
+                                    <input v-model="newCouponDescription" class="form-control" id="couponDescription"
+                                        placeholder="Only available at Bugis Junction etc.">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="couponDueDate">Due Date of Coupon</label>
-                                <input v-model="newCouponDueDate" class="form-control" id="couponDueDate"
-                                    placeholder="29 November 2019 etc.">
+                            <div class="col-12" style="text-align: center;">
+                                <div class="form-group">
+                                    <label for="couponDueDate">Due Date of Coupon</label>
+                                    <input v-model="newCouponDueDate" class="form-control" id="couponDueDate"
+                                        placeholder="29 November 2019 etc.">
+                                </div>
                             </div>
-                            <!-- <div class="form-group">
-                                            <label for="couponImage">Image of Coupon</label>
-                                            <input v-model="newCouponImage" class="form-control" id="couponImage"
-                                                placeholder="Enter image of coupon">
-                                    </div> -->
-                            <div class="form-group">
-                                <label for="couponTags">Coupon Tag(s)</label>
-                                <input v-model="newCouponTags" class="form-control" id="couponTags"
-                                    placeholder="Halal/Non-Halal, Wester/Asian etc. ">
+                            <div class="col-12" style="text-align: center;">
+                                <div class="form-group">
+                                    <label for="couponTags">Coupon Tag(s)</label>
+                                    <input v-model="newCouponTags" class="form-control" id="couponTags"
+                                        placeholder="Halal/Non-Halal, Wester/Asian etc. ">
+                                </div>
+
+                            </div>
+                            <div class="col-12" style="text-align: center;">
+                                <div class="form-group">
+                                    <div>
+                                        <div v-if="imageURL != null">
+                                            <img :src="imageURL" />
+                                        </div>
+                                        <label for="couponName">Image of coupon</label>
+
+                                        <input type="file" class="form-control" @change="previewImage"
+                                            accept="image/*" />
+
+                                        <small class="form-text text-muted">
+                                            Click on 'Choose File' to upload an image
+                                        </small>
+
+                                    </div>
+                                </div>
                             </div>
 
-
-                            <button class="btn btn-primary" v-on:click="submitNewCoupon">Submit</button>
+                            <button class="btn btn-primary" style="text-align: center;"
+                                v-on:click="uploadImageAndSubmitCoupon">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+
+    <script src="firebase-init.js"></script>
+
+    <script src="submitCoupon.js"></script>
+
+
 </body>
 
 </html>
