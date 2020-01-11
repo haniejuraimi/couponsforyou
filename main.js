@@ -17,15 +17,7 @@ var app = new Vue({
         selectedCompanyName: null,
         selectedPrice: null,
         selectedLocation: null,
-        newCouponName: "",
-        newCouponCompany: "",
-        newCouponDescription: "",
-        newCouponDueDate: "",
-        newCouponPrice: "",
-        newCouponTags: "",
-
         selectedCoupon: {},
-
     },
     mounted: async function () {
         const db = firebase.firestore();
@@ -40,20 +32,6 @@ var app = new Vue({
         },
         closeCouponModal: function () {
             this.selectedCoupon = {}
-        },
-        submitNewCoupon: function () {
-            const newCoupon = {
-                couponName: this.newCouponName,
-                companyName: this.newCouponCompany,
-                description: this.newCouponDescription,
-                dueDate: this.newCouponDueDate,
-                // CouponImage: this.newCouponImage,
-                price: this.newCouponPrice,
-                isVerified: false,
-                tags: this.newCouponTags.split(',').map(eachTag => eachTag.trim()),
-            }
-
-            console.log("To submit to firebase", newCoupon)
         },
         companyNameFilterSelected: function (selectedCompanyName) {
             this.selectedCompanyName = selectedCompanyName;
@@ -175,7 +153,7 @@ var app = new Vue({
     }
 
 
-})
+});
 
 //Get the button:
 mybutton = document.getElementById("myBtn");
