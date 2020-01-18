@@ -34,6 +34,7 @@ var app = new Vue({
             this.selectedCoupon = {}
         },
         companyNameFilterSelected: function (selectedCompanyName) {
+            console.log(selectedCompanyName)
             this.selectedCompanyName = selectedCompanyName;
         },
         clearFoodOutletsFilter: function () {
@@ -93,9 +94,10 @@ var app = new Vue({
 
             console.log("at company name filter, the value of coupons filtered by price", couponsFilteredByPrice)
             const couponsFilteredByPriceAndCompanyName = couponsFilteredByPrice.filter(function (coupon) {
-                if (!this.selectedCompanyName) return true;
+                if (!selectedCompanyName) return true;
 
-                if (coupon.companyName === selectedCompanyName) {
+                const companyName = coupon.companyName.trim();
+                if (companyName === selectedCompanyName) {
                     return true;
                 } else {
                     return false;
@@ -125,8 +127,9 @@ var app = new Vue({
 
                 // Loop through array values
                 for (const coupon of coupons) {
-                    if (!uniqueArrayOfCompanies.includes(coupon.companyName)) {
-                        uniqueArrayOfCompanies.push(coupon.companyName);
+                    const companyName = coupon.companyName.trim();
+                    if (!uniqueArrayOfCompanies.includes(companyName)) {
+                        uniqueArrayOfCompanies.push(companyName);
                     }
                 }
                 return uniqueArrayOfCompanies;
@@ -151,8 +154,6 @@ var app = new Vue({
             return getUnique(this.coupons);
         }
     }
-
-
 });
 
 //Get the button:
