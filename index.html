@@ -18,75 +18,83 @@
 <body>
     <div id="app">
         <header>
-            <nav class="navbar fixed-top  navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">FOODDEALSBYHAFSA</a>
-                <a href="submit.html" id="submit-button-nav"><i class="fas fa-plus"></i> </a>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">FOODDEALSBYHAFSA</a>
+                    <a href="submit.html" id="submit-button-nav"><i class="fas fa-plus"></i> </a>
+                </div>
             </nav>
         </header>
 
-        <div class="content">
-            <div class="btn-group filters-button-group" role="group">
-                <div class="btn-group" role="group">
-                    <button id="companyName-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Food Types
-                    </button>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="companyName-dropdown">
-                        <a class="dropdown-item" v-for="companyName in couponsWithUniqueCompanyNames"
-                            v-on:click="companyNameFilterSelected(companyName)">
-                            {{ companyName }}
-                        </a>
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="btn-group filters-button-group" role="group">
+                        <div class="btn-group" role="group">
+                            <button id="companyName-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Food Types
+                            </button>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="companyName-dropdown">
+                                <a class="dropdown-item" v-for="companyName in couponsWithUniqueCompanyNames"
+                                    v-on:click="companyNameFilterSelected(companyName)">
+                                    {{ companyName }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Budget
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="prices-dropdown">
+                                <a class="dropdown-item" v-for="price in couponsWithUniquePrices"
+                                    v-on:click="priceFilterSelected(price)">
+                                    {{ price }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Location
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="prices-dropdown">
+                                <a class="dropdown-item" @click="setLocation('North')">
+                                    North
+                                </a>
+                                <a class="dropdown-item" @click="setLocation('South')">
+                                    South
+                                </a>
+                                <a class="dropdown-item" @click="setLocation('East')">
+                                    East
+                                </a>
+                                <a class="dropdown-item" @click="setLocation('West')">
+                                    West
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Budget
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="prices-dropdown">
-                        <a class="dropdown-item" v-for="price in couponsWithUniquePrices"
-                            v-on:click="priceFilterSelected(price)">
-                            {{ price }}
-                        </a>
-                    </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button id="prices-dropdown" type="button" class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Location
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="prices-dropdown">
-                        <a class="dropdown-item" @click="setLocation('North')">
-                            North
-                        </a>
-                        <a class="dropdown-item" @click="setLocation('South')">
-                            South
-                        </a>
-                        <a class="dropdown-item" @click="setLocation('East')">
-                            East
-                        </a>
-                        <a class="dropdown-item" @click="setLocation('West')">
-                            West
-                        </a>
-                    </div>
+                    <br />
                 </div>
             </div>
-            <br />
 
-            <a v-if="selectedCompanyName" class="badge badge-primary pointer selectedOption"
-                @click="clearFoodOutletsFilter">
-                {{selectedCompanyName}} &#9747;
-            </a>
-            <a v-if="selectedPrice" class="badge badge-primary pointer selectedOption"
-                @click="clearPriceFilter">{{selectedPrice}} &#9747;
-            </a>
-            <a v-if="selectedLocation" class="badge badge-primary pointer selectedOption" @click="clearLocation">
-                {{selectedLocation}} &#9747;
-            </a>
-
-            <!-- Button trigger modal -->
-
+            <div class="row">
+                <div class="col-sm mb-3">
+                    <a v-if="selectedCompanyName" class="badge badge-primary pointer selectedOption"
+                        @click="clearFoodOutletsFilter">
+                        {{selectedCompanyName}} &#9747;
+                    </a>
+                    <a v-if="selectedPrice" class="badge badge-primary pointer selectedOption"
+                        @click="clearPriceFilter">{{selectedPrice}} &#9747;
+                    </a>
+                    <a v-if="selectedLocation" class="badge badge-primary pointer selectedOption"
+                        @click="clearLocation">
+                        {{selectedLocation}} &#9747;
+                    </a>
+                </div>
+            </div>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -118,8 +126,8 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4  card-wrapper col-sm-12" v-for="coupon in filteredCoupons">
-                    <div class="card" data-toggle="modal" data-target="#couponModal">
+                <div class="col-md-3 card-wrapper col-sm-12" v-for="coupon in filteredCoupons">
+                    <div class="card coupon-card" data-toggle="modal" data-target="#couponModal">
                         <img :src="coupon.image" />
 
                         <div class="card-body">

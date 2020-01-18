@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -10,7 +11,7 @@ html, body {
 }
 
 #carouselExampleIndicators {
-  height:85vh;
+  height: 85vh;
   padding-top: 0em;
   padding-left: 10em;
   padding-right: 10em;
@@ -18,7 +19,7 @@ html, body {
 }
 
 .carousel-indicators {
-padding-bottom: 6em;
+  padding-bottom: 6em;
 }
 
 .carousel-control-prev {
@@ -44,7 +45,7 @@ p {
 }
 
 #subwaypreview {
-padding-top: 2.5em;
+  padding-top: 2.5em;
 }
 
 .content {
@@ -83,7 +84,7 @@ background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, F
 
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
   .logo {
     position: fixed;
     top: 0;
@@ -113,7 +114,7 @@ background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, F
   .menu-icon {
     display: block;
   }
-  
+
   .column {
     float: left;
     width: 25%;
@@ -134,10 +135,8 @@ background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, F
   margin-top: -0.6em;
 }
 
-
 .pointer {
   cursor: pointer;
-  
 }
 
 .selectedOption {
@@ -188,5 +187,9 @@ background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, F
 }
 
 #submit-button-nav {
-  color: rgba(0,0,0,.9);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.coupon-card img {
+  height: 250px;
 }
