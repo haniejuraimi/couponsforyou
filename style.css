@@ -31,8 +31,12 @@ padding-bottom: 6em;
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #8bbabb;
-  /* #CD5C5C;  fallback for old browsers */
+  background: #DAE2F8;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* background: #8bbabb; */
+  /* #8bbabb;  fallback for old browsers */
 }
 
 p {
@@ -60,59 +64,6 @@ padding-top: 2.5em;
   letter-spacing: 2px;
 }
 
-/* .button {
-  background-color: #255ca3f5;
-  border: 1cm;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.button-clear {
-  background-color: rgba(134, 54, 54, 0.555);
-  border: 1cm;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-} */
-
-/* nav ul {
-  list-style: none;
-  background: rgba(0, 0, 0, 0);
-  overflow: hidden;
-  color: #fff;
-  padding: 0;
-  text-align: right;
-  margin: 0;
-  padding-right: 40px;
-  transition: 1s;
-}
-
-nav.black ul {
-  background: #000;
-}
-
-nav ul li {
-  display: inline-block;
-  padding: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-} */
-
 .menu-icon {
   width: 100%;
   background: #000;
@@ -125,7 +76,11 @@ nav ul li a {
 }
 
 nav { 
-  background: #8bbaba;
+  /* background: #8bbaba; */
+  background: #DAE2F8;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 @media(max-width: 500px) {
