@@ -31,15 +31,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 text-center">
-                                <h1>Send Us A Coupon</h1>
-                                <p class="lead">If you have a coupon that you would like to share, send
+                                <h1>Send Us Your Deaks</h1>
+                                <p class="lead">If you have a food deal that you would like to share, send
                                     us an email
                                     and we will upload it for you!</p>
                             </div>
 
                             <div class="col-12" style="text-align: center;">
                                 <div class="form-group">
-                                    <label for="couponName">Name of Coupon</label>
+                                    <label for="couponName">Name of Coupon/Deal</label>
                                     <input v-model="newCouponName" class="form-control" id="couponName"
                                         placeholder="Family Set/$5 off etc." />
                                 </div>
@@ -79,7 +79,7 @@
                                         <div v-if="imageURL != null">
                                             <img :src="imageURL" />
                                         </div>
-                                        <label for="couponName">Image of coupon</label>
+                                        <label for="couponName">Image Of Coupon/Deal</label>
 
                                         <input type="file" class="form-control" @change="previewImage"
                                             accept="image/*" />
